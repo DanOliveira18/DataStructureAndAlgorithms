@@ -14,6 +14,7 @@ npx tsx <path to file>
 ### Sort algorithms
 
 - Bubble sort
+- Quick sort
 
 ### Two pointers
 
