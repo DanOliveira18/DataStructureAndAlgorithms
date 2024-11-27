@@ -91,6 +91,43 @@ class BinaryTree {
       result.push(node.value);
     }
   }
+
+  public dfs(target: number): boolean {
+    return this.recursiveDFS(this.root, target);
+  }
+
+  public recursiveDFS(node: Nodo, target: number): boolean {
+    if (node) {
+      if (target === node.value) {
+        return true;
+      } else {
+        return (
+          this.recursiveDFS(node.left, target) ||
+          this.recursiveDFS(node.right, target)
+        );
+      }
+    }
+
+    return false;
+  }
+
+  public bfs(target: number): boolean {
+    let queue: Nodo[] = [this.root];
+
+    while (queue.length > 0) {
+      let node = queue.pop();
+      if (node) {
+        if (node.value === target) {
+          return true;
+        } else {
+          node.left && queue.push(node.left);
+          node.right && queue.push(node.right);
+        }
+      }
+    }
+
+    return false;
+  }
 }
 
 const binaryTree = new BinaryTree(5);
@@ -103,3 +140,6 @@ binaryTree.insert(7);
 console.log(binaryTree.preorder());
 console.log(binaryTree.inorder());
 console.log(binaryTree.postorder());
+
+console.log(binaryTree.bfs(7));
+console.log(binaryTree.dfs(15));

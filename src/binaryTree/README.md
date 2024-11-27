@@ -25,3 +25,11 @@ Inorder traversal traverses a tree by visiting the left subtree first, then the 
 #### Postorder traversal
 
 Postorder traversal traverses a tree by visiting first the left subtree, then the right, and finally the current node.
+
+#### DFS (Depth-First Search)
+
+DFS is a type of binary tree search that seeks to go as deep as possible in the tree, and then return following alternative paths. It is possible to implement the Preorder, Inorder and PostOrder methods in DFS, in this binary tree, I implemented DFS with recursive, but you can implement it iterative with a pile to improve the callstack
+
+#### BFS (Breadth-First Search)
+
+BFS traverses the tree in layers, the first layer would be the root, the second layer all the children of the root, the third layer all the children of the children of the root, and so on. It can be implemented recursively or iteratively using a FIFO queue, but the iterative way ends up being easier to implement.
